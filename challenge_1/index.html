@@ -4,9 +4,8 @@
 </head>
 <body>
     <div id="app"> </div>
-    <p>Tic Tac Toe</p>
-    <button onClick="clearOut('thetable')">RESET</button>
-    <table id="thetable" style="width :50%; height: 500px" >
+    <p class="Tic">Tic Tac Toe</p>
+    <table id="thetable" align="center">
         <tr >
             <th id="0" onClick="XO(this)"></th>
             <th id="1" onClick="XO(this)"></th>
@@ -23,6 +22,9 @@
             <th id="8" onClick="XO(this)"></th>
         </tr>
     </table>
+    <div class="buttons">
+        <button class="reset" onClick="clearOut('thetable')" >RESET</button>
+    </div>
     <p class="Winner"></p>    
     <script src="./app.js"></script>
 </body>

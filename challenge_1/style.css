@@ -1,10 +1,87 @@
 th{
-    border: 1px solid black;
+    border: 10px solid azure;
     table-layout: fixed;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: 0px 10px paleturquoise;
+    background-color: white;
+}
+
+table{
+    vertical-align: middle;
+}
+body{
+    background-color: cornflowerblue;
+    vertical-align: middle;
 
 }
-table{
-    table-layout: fixed;    
+.Winner{
+    font-family: fantasy;
+    font-size: 30px;
+    text-align: center;
+    color: cyan
 }
+tr{
+    color:cornflowerblue;
+    font-family: fantasy;
+    font-size: 50px;
+    text-shadow: 0px 5px 5px paleturquoise;
+}
+.Tic{
+    font-family: fantasy;
+    color: cyan;
+    text-align: center;
+    font-size: 60px;
+}
+/* .reset{
+    position: relative;
+    color: cornflowerblue;
+    text-align: center;
+} */
+.buttons{
+    text-align: center;
+}
+
+button{
+    background:cornflowerblue;
+    color:#fff;
+    border:none;
+    margin: 10px;
+    position:relative;
+    height:60px;
+    font-size:1.6em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  button:hover{
+    background:cornflowerblue;
+    color: white;
+  }
+  button:before,button:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: white;
+    transition:400ms ease all;
+  }
+  button:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  button:hover:before,button:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+
+
+
+
+  
