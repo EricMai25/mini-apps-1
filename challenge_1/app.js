@@ -1,13 +1,4 @@
 
-// document.getElementById('1').onClick(XO);
-// document.getElementById('2').onClick(XO);
-// document.getElementById('3').onClick(XO);
-// document.getElementById('4').onClick(XO);
-// document.getElementById('5').onClick(XO);
-// document.getElementById('6').onClick(XO);
-// document.getElementById('7').onClick(XO);
-// document.getElementById('8').onClick(XO);
-// document.getElementById('9').onClick(XO);
 var player1 = document.getElementsByClassName('player1')
 var player2 = document.getElementsByClassName('player2')
 var current = 'X'
@@ -181,4 +172,9 @@ var player=()=>{
     player1[0].classList.toggle("glow")
     player1[0].innerHTML = play
     player2[0].innerHTML = play2
+}
+
+var rotate=()=>{
+    var table = document.getElementsByClassName('thetable')
+    table[0].classList.toggle("rotated")
 }
