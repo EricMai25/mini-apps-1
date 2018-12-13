@@ -2,19 +2,19 @@
 <head>
     <title> Express</title>
 </head>
-<body onload="paste()">
+<body >
     <div class="container">
-        <form action="/input"  method="POST" enctype="multipart/form-data">
+        <form >
             
             <!-- <textarea  class="example" type='text' name="string" rows="20" cols="100" >
             </textarea><br> -->
             <!-- <input type="Submit" value="Submit"/> <br> -->
-            <input type="file" id="csvFile" name="string" accept=".json"/><br>
-            <input type="Submit" value="Submit" onClick(e)/>
+            <input class="example" type="file" id="csvFile" name="string" accept=".json"/><br>
+            <input type="Submit" value="Submit" onClick="reader(event)"/>
         </form>
 
     </div>
-    <script src="./app.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 

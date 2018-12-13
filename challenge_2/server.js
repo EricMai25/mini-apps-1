@@ -7,6 +7,8 @@ var index = path.join(__dirname + '/client/index.html')
 var html = '<form action="/input"  method="POST"> <input type="file" id="csvFile" name="string" accept=".csv"/><br><input type="Submit" value="Submit"/></form>'
 
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static('client'))
+
 
 const convert=(obj , result)=>{
     const conv = []
@@ -23,9 +25,6 @@ const convert=(obj , result)=>{
     return result
 }
 
-app.get('/', function(req, res) {
-    res.sendFile(index);
-});
 
 app.post('/input', function(req, res){
     // console.log(req)
