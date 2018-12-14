@@ -9,14 +9,24 @@ class App extends React.Component{
         }
     }
 
-
+    purchase(obj){
+        console.log(obj , 'in apps')
+        fetch( '/purchased',{
+            method : 'POST',
+            body: JSON.stringify(obj),
+            headers: { 'Content-Type': 'application/json ; charset=utf-8' }
+        }).then((res)=>{
+            console.log(res)
+        })
+        
+    }
 
     movePage(pageOn , obj , move){
         if(move === 'prev'){
             pageOn--
             this.setState(
                 {
-                    page : pageOn
+                    page : pageOn,
                 }
             )
         }
@@ -31,7 +41,6 @@ class App extends React.Component{
 
                 }
             )
-            console.log(this.state.all, 'hello')
         }
         
     }
@@ -42,7 +51,7 @@ class App extends React.Component{
                 { this.state.page === 0 ? (<Home  click={this.movePage.bind(this)}/>) :
                     this.state.page === 1 ? (<F1 click={this.movePage.bind(this)}/>) :
                     this.state.page ===2 ? (<F2 click={this.movePage.bind(this)}/>):
-                    this.state.page === 3 ? (<F3 click={this.movePage.bind(this)}/>) : (<Purchase info={this.state.all} click={this.movePage.bind(this)}/>) }
+                    this.state.page === 3 ? (<F3 click={this.movePage.bind(this)}/>) : (<Purchase info={this.state.all} add={this.purchase.bind(this)} click={this.movePage.bind(this)}/>) }
             </div>
         )
 
@@ -102,6 +111,7 @@ class F2 extends React.Component{
             city:'',
             state:'',
             zip:'',
+            phone: ''
         }
     } 
     
@@ -116,7 +126,9 @@ class F2 extends React.Component{
                     State:<br></br>
                     <input type='text' name="State" onChange={(e)=>{this.state.state = e.target.value}}/> <br></br>
                     Zip-code:<br></br>
-                    <input type='text' name="Zip" onChange={(e)=>{this.state.zip = e.target.value}}/> <br></br>
+                    <input type='text' name="State" onChange={(e)=>{this.state.zip = e.target.value}}/> <br></br>
+                    Phone:<br></br>
+                    <input type='text' name="Zip" onChange={(e)=>{this.state.phone = e.target.value}}/> <br></br>
                     <button type="button" onClick={(e)=>{this.props.click(2 , {} , 'prev')}}>Prev</button>
                     <button type="button"  onClick={(e)=>{this.props.click(2 , this.state, 'next')}}>Next</button>
                 </form>
@@ -180,8 +192,8 @@ class Purchase extends React.Component{
                         )
                     })}
                 </div>
-                <button type="button"  onClick={()=>{props.click(4 , {}, 'prev')}}>Prev</button>
-                <button type="button"  onClick={()=>{props.click(4)}}>Purchase</button>
+                <button type="button"  onClick={()=>{this.props.click(4 , {}, 'prev')}}>Prev</button>
+                <button type="button"  onClick={()=>{this.props.add(this.props.info)  }}>Purchase</button>
             </form>
         )
 
